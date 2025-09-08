@@ -46,6 +46,16 @@ body {
 .icon-btn { background:transparent;border:0;padding:8px;border-radius:8px;cursor:pointer; }
 .hamburger { display:none; }
 
+
+.vote-section {
+  margin-left: 180px;
+  margin-bottom: 50px;
+}
+
+.contact-section {
+  margin-left: 50px;
+}
+
 /* Hero */
 .hero { padding:48px 12px; max-width:var(--container); margin:0 auto; }
 .hero-grid { display:grid; grid-template-columns:1fr 360px; gap:24px; align-items:center; }
