@@ -147,3 +147,20 @@ body {
 
 /* focus-visible for accessibility */
 :focus-visible { outline: 3px solid rgba(56,189,248,0.25); outline-offset:3px; }
+/* === Weather card styling === */
+.weather-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  text-align: center;
+}
+
+.weather-card h3 {
+  margin-top: 0;
+}
+
+.weather-card img {
+  width: 80px;
+  height: 80px;
+}
