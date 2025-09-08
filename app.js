@@ -33,3 +33,58 @@ async function getWeather() {
 
 // kör direkt när sidan laddas
 getWeather();
+
+// === Like-knapp logik ===
+document.addEventListener('DOMContentLoaded', () => {
+  // Like button logic
+  document.querySelectorAll('.like-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const counter = this.querySelector('.counter');
+      const icon = this.querySelector('i');
+      let count = parseInt(counter.textContent, 10) || 0;
+
+      if (this.classList.contains('liked')) {
+        // Unlike
+        count = Math.max(0, count - 1);
+        counter.textContent = count;
+        this.classList.remove('liked');
+        icon.classList.remove('fa-solid', 'fa-heart', 'liked-heart');
+        icon.classList.add('fa-regular', 'fa-heart');
+      } else {
+        // Like
+        count++;
+        counter.textContent = count;
+        this.classList.add('liked');
+        icon.classList.add('fa-solid', 'fa-heart', 'liked-heart');
+        icon.classList.remove('fa-regular');
+      }
+    });
+  });
+});
+
+// Simple carousel logic
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.getElementById('carousel');
+  if (!carousel) return;
+
+  const slides = carousel.querySelectorAll('.slide');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? 'block' : 'none';
+    });
+  }
+
+  showSlide(current);
+
+  carousel.querySelector('.carousel-prev').addEventListener('click', () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+
+  carousel.querySelector('.carousel-next').addEventListener('click', () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+});
