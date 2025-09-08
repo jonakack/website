@@ -3,157 +3,405 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Team Exempel — Start</title>
-  <meta name="description" content="Grupp-hemsida med presentation av medlemmar.">
+  <title>TechTeam Collective – Framtidens utvecklare</title>
+  <meta name="description" content="Möt TechTeam Collective - en grupp passionerade utvecklare som bygger framtiden tillsammans. Frontend, backend, data science och mer.">
+  <meta name="keywords" content="webbutveckling, frontend, backend, data science, team, utvecklare">
+  <meta name="author" content="TechTeam Collective">
+  
+  <!-- Open Graph för social media -->
+  <meta property="og:title" content="TechTeam Collective – Framtidens utvecklare">
+  <meta property="og:description" content="Möt vårt team av passionerade utvecklare som bygger framtiden tillsammans.">
+  <meta property="og:type" content="website">
+  
+  <!-- CSS och fonts -->
   <link rel="stylesheet" href="styles.css">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <!-- Icon library (Font Awesome free CDN) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Favicon (simple svg data url) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Icon library - FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
 </head>
 <body>
+  <!-- Header med navigation -->
   <header class="site-header">
     <div class="nav-inner">
-      <a class="brand" href="index.html">TeamExempel</a>
+      <a class="brand" href="index.html">
+        <i class="fas fa-code" aria-hidden="true"></i>
+        <span>Team Linköping</span>
+      </a>
 
-      <nav id="mainNav" class="nav">
-        <a href="index.html">Home</a>
-        <a href="members.html">Medlemmar</a>
-        <a href="about.html">Om oss</a>
+      <!-- Navigation -->
+      <nav id="mainNav" class="nav" aria-label="Huvudnavigation">
+        <a href="index.html" class="nav-link active" aria-current="page">Hem</a>
+        <a href="members.html" class="nav-link">Medlemmar</a>
+        <a href="about.html" class="nav-link">Om oss</a>
+        <a href="#contact" class="nav-link">Kontakt</a>
       </nav>
 
       <div class="nav-actions">
-        <button id="themeToggle" aria-label="Mörkt/ljus-läge" class="icon-btn"><i class="fa-solid fa-moon"></i></button>
-        <button id="menuToggle" aria-label="Meny" class="icon-btn hamburger"><i class="fa-solid fa-bars"></i></button>
+        <button id="themeToggle" aria-label="Växla mellan mörkt och ljust tema" class="theme-btn">
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        </button>
+        <button id="menuToggle" aria-label="Öppna/stäng mobilmeny" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
-
-    <!-- sticky decoration -->
-    <div class="hero-deco" aria-hidden="true"></div>
   </header>
 
+  <!-- Main innehåll -->
   <main>
-    <section class="hero" id="hero">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <h1 class="hero-title">Vi bygger framtiden — tillsammans</h1>
-          <p class="hero-lead">Presentation av vårt team, våra mål och vägen mot tech-karriärerna.</p>
-          <div class="cta-row">
-            <a href="members.html" class="btn cta">Se medlemmar</a>
-            <a href="#vote" class="btn ghost">Rösta på namn</a>
+    <!-- Hero sektion -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+        </div>
+      </div>
+      
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 id="hero-title" class="hero-title">
+            Vi bygger <span class="gradient-text">framtiden</span> tillsammans
+          </h1>
+          <p class="hero-lead">
+            Möt TechTeam Collective - en grupp passionerade utvecklare som formar morgondagens teknologi med kreativitet, innovation och teamwork.
+          </p>
+          
+          <div class="hero-cta">
+            <a href="members.html" class="btn btn-primary">
+              <i class="fas fa-users" aria-hidden="true"></i>
+              <span>Möt teamet</span>
+            </a>
+            <a href="#vote" class="btn btn-secondary">
+              <i class="fas fa-vote-yea" aria-hidden="true"></i>
+              <span>Rösta på namn</span>
+            </a>
           </div>
         </div>
-        <div class="hero-right">
+        
+        <!-- Väder widget -->
+        <aside class="hero-widget" aria-labelledby="weather-title">
           <div class="weather-card" id="weatherCard" aria-live="polite">
-            <div class="weather-loading">Hämtar väder…</div>
+            <h3 id="weather-title" class="sr-only">Väderinformation</h3>
+            <div class="weather-loading">
+              <div class="loading-spinner"></div>
+              <p>Hämtar väderdata...</p>
+            </div>
           </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Section för medlemmar -->
+    <section class="members-section" id="members-preview" aria-labelledby="members-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="members-title" class="section-title">Våra talangfulla medlemmar</h2>
+          <p class="section-subtitle">Lär känna expertisen bakom våra innovativa lösningar</p>
+        </div>
+
+        <div class="members-grid">
+          <article class="member-card">
+            <div class="member-image">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800" 
+                   alt="Porträtt av Anna Andersson, leende kvinna med ljust hår">
+              <div class="member-overlay">
+                <button class="like-btn" data-id="anna" aria-label="Gilla Anna Andersson">
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i> 
+                  <span class="counter">0</span>
+                </button>
+              </div>
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Anna Andersson</h3>
+              <p class="member-location">
+                <i class="fas fa-map-marker-alt"></i>
+                Stockholm
+              </p>
+              <span class="member-role">Frontend-utvecklare</span>
+              <p class="member-description">
+                Specialist på React och modern CSS. Brinner för användarvänlig design och tillgänglighet.
+              </p>
+              <a href="members.html" class="member-link">
+                Visa profil
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="member-card">
+            <div class="member-image">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800" 
+                   alt="Porträtt av Björn Berg, man med skägg och glasögon">
+              <div class="member-overlay">
+                <button class="like-btn" data-id="bjorn" aria-label="Gilla Björn Berg">
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i> 
+                  <span class="counter">0</span>
+                </button>
+              </div>
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Björn Berg</h3>
+              <p class="member-location">
+                <i class="fas fa-map-marker-alt"></i>
+                Göteborg
+              </p>
+              <span class="member-role">Backend-utvecklare</span>
+              <p class="member-description">
+                Expert på Node.js och databasoptimering. Älskar att lösa komplexa tekniska utmaningar.
+              </p>
+              <a href="members.html" class="member-link">
+                Visa profil
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="member-card">
+            <div class="member-image">
+              <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=800" 
+                   alt="Porträtt av Clara Carlsson, kvinna med mörkt hår">
+              <div class="member-overlay">
+                <button class="like-btn" data-id="clara" aria-label="Gilla Clara Carlsson">
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i> 
+                  <span class="counter">0</span>
+                </button>
+              </div>
+            </div>
+            <div class="member-info">
+              <h3 class="member-name">Clara Carlsson</h3>
+              <p class="member-location">
+                <i class="fas fa-map-marker-alt"></i>
+                Malmö
+              </p>
+              <span class="member-role">Data Scientist</span>
+              <p class="member-description">
+                Transformerar data till insikter med Python och machine learning. Passionerad för AI-innovation.
+              </p>
+              <a href="members.html" class="member-link">
+                Visa profil
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="cards-overview" id="members-preview">
-      <h2 class="section-title">Utvalda medlemmar</h2>
-
-      <div class="cards-grid">
-        <!-- Cards will be static but have :hover/:focus and animations -->
-        <article class="member-card" tabindex="0">
-          <figure class="card-media">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800" alt="Anna Andersson" />
-          </figure>
-          <div class="card-body">
-            <h3 class="card-name">Anna Andersson</h3>
-            <p class="card-city">Stockholm</p>
-            <p class="card-role">Frontend-utvecklare</p>
-            <div class="card-controls">
-              <button class="like-btn" data-id="anna"><i class="fa-regular fa-heart"></i> <span class="counter">0</span></button>
-              <button class="open-profile" onclick="location.href='members.html'">Profil</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="member-card" tabindex="0">
-          <figure class="card-media">
-            <img src="https://images.unsplash.com/photo-1545996124-6b7b3f0b1a8d?q=80&w=800" alt="Björn Berg" />
-          </figure>
-          <div class="card-body">
-            <h3 class="card-name">Björn Berg</h3>
-            <p class="card-city">Göteborg</p>
-            <p class="card-role">Backend-utvecklare</p>
-            <div class="card-controls">
-              <button class="like-btn" data-id="bjorn"><i class="fa-regular fa-heart"></i> <span class="counter">0</span></button>
-              <button class="open-profile" onclick="location.href='members.html'">Profil</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="member-card" tabindex="0">
-          <figure class="card-media">
-            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800" alt="Clara Carlsson" />
-          </figure>
-          <div class="card-body">
-            <h3 class="card-name">Clara Carlsson</h3>
-            <p class="card-city">Malmö</p>
-            <p class="card-role">Data Scientist</p>
-            <div class="card-controls">
-              <button class="like-btn" data-id="clara"><i class="fa-regular fa-heart"></i> <span class="counter">0</span></button>
-              <button class="open-profile" onclick="location.href='members.html'">Profil</button>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
+    <!-- Section för röstning -->
     <section id="vote" class="vote-section">
-      <h2 class="section-title">Rösta på teamnamn</h2>
-      <form id="voteForm" class="vote-form" novalidate>
-        <label for="teamOption">Välj namn:</label>
-        <select id="teamOption" required>
-          <option value="">— Välj —</option>
-          <option value="TeamA">Team A</option>
-          <option value="TeamB">Team B</option>
-          <option value="TeamC">Team C</option>
-        </select>
-        <button type="submit" class="btn">Rösta</button>
-        <div id="voteResult" class="vote-result" aria-live="polite"></div>
-      </form>
-    </section>
-
-    <section class="slider-section">
-      <h2 class="section-title">Bildslider</h2>
-      <div class="carousel" id="carousel">
-        <div class="slides">
-          <div class="slide"><img src="https://wallpapers.com/images/featured/coding-background-9izlympnd0ovmpli.jpg" alt=""></div>
-          <div class="slide"><img src="https://www.open.edu/openlearn/pluginfile.php/1317197/tool_ocwmanage/image/0/sc_1_olhp_786px.jpg" alt=""></div>
-          <div class="slide"><img src="https://t4.ftcdn.net/jpg/04/63/37/51/360_F_463375173_vBKRkUbVoCuS9lpUmhdfCc13pprPr148.jpg" alt=""></div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Hjälp oss välja teamnamn</h2>
+          <p class="section-subtitle">Vi funderar på att byta namn! Vilket av dessa alternativ tycker du passar oss bäst?</p>
         </div>
-        <button class="carousel-prev" aria-label="Föregående">&lt;</button>
-        <button class="carousel-next" aria-label="Nästa">&gt;</button>
+        
+        <div class="vote-container">
+          <form id="voteForm" class="vote-form" novalidate>
+            <div class="form-group">
+              <label for="teamOption" class="form-label">Välj ditt favoritnamn:</label>
+              <select id="teamOption" class="form-select" required>
+                <option value="">— Välj ett alternativ —</option>
+                <option value="TechTeam Collective">TechTeam Collective</option>
+                <option value="Code Creators">Code Creators</option>
+                <option value="Digital Innovators">Digital Innovators</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-large">
+              <i class="fas fa-vote-yea" aria-hidden="true"></i>
+              <span>Skicka röst</span>
+            </button>
+            
+            <div id="voteResult" class="vote-result" aria-live="polite"></div>
+          </form>
+        </div>
       </div>
     </section>
 
-    <section class="contact-section">
-      <h2 class="section-title">Kontakta oss</h2>
-      <form id="contactForm" class="contact-form" novalidate>
-        <label for="nameInput">Namn</label>
-        <input id="nameInput" type="text" required minlength="2" placeholder="Ditt namn">
-        <label for="roleInput">Framtida yrkesroll</label>
-        <input id="roleInput" type="text" placeholder="Frontend-utvecklare">
-        <label for="messageInput">Kort info (visas på sidan efter klick)</label>
-        <input id="messageInput" type="text" placeholder="Skriv något...">
-        <button type="submit" class="btn">Skicka</button>
-        <div id="contactResult" class="contact-result" aria-live="polite"></div>
-      </form>
+    <!-- Section för bildslider -->
+    <section class="gallery-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Vårt arbete i bilder</h2>
+          <p class="section-subtitle">En inblick i våra projekt, arbetsmiljö och teamaktiviteter</p>
+        </div>
+        
+        <div class="carousel" id="carousel" role="region">
+          <div class="carousel-container">
+            <div class="slides">
+              <div class="slide">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600" 
+                     alt="Modernt kontor med utvecklare som samarbetar kring datorskärmar">
+                <div class="slide-content">
+                  <h3>Samarbete i fokus</h3>
+                  <p>Vi arbetar tillsammans för att skapa innovativa lösningar</p>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600" 
+                     alt="Närbildsvy av kodning på datorskärm med färgglad syntax">
+                <div class="slide-content">
+                  <h3>Ren, elegant kod</h3>
+                  <p>Vi strävar efter kvalitet och underhållbarhet i allt vi bygger</p>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600" 
+                     alt="Team meeting med personer som diskuterar runt en whiteboard">
+                <div class="slide-content">
+                  <h3>Kreativitet och innovation</h3>
+                  <p>Brainstorming och problemlösning är hjärtat i vårt arbete</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <button class="carousel-btn carousel-prev" aria-label="Föregående bild">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="carousel-btn carousel-next" aria-label="Nästa bild">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
     </section>
 
-    <button id="scrollTop" class="scroll-top" title="Scrolla upp"><i class="fa-solid fa-chevron-up"></i></button>
+    <!-- Section för kontakt -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Bli en del av vårt team</h2>
+          <p class="section-subtitle">Intresserad av att samarbeta eller bara säga hej? Vi hör gärna från dig!</p>
+        </div>
+        
+        <div class="contact-container">
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nameInput" class="form-label">Ditt namn *</label>
+                <input id="nameInput" 
+                       type="text" 
+                       class="form-input"
+                       required 
+                       minlength="2" 
+                       maxlength="50"
+                       placeholder="För- och efternamn">
+              </div>
+              
+              <div class="form-group">
+                <label for="emailInput" class="form-label">E-postadress</label>
+                <input id="emailInput" 
+                       type="email" 
+                       class="form-input"
+                       placeholder="din@email.com">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="roleInput" class="form-label">Framtida yrkesroll</label>
+              <input id="roleInput" 
+                     type="text" 
+                     class="form-input"
+                     maxlength="100"
+                     placeholder="t.ex. Frontend-utvecklare, UX Designer...">
+            </div>
+            
+            <div class="form-group">
+              <label for="messageInput" class="form-label">Berätta lite om dig själv</label>
+              <textarea id="messageInput" 
+                        class="form-textarea"
+                        rows="4" 
+                        maxlength="500"
+                        placeholder="Vad driver dig inom teknologi? Vilka projekt arbetar du med?"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-large">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              <span>Skicka meddelande</span>
+            </button>
+            
+            <div id="contactResult" class="contact-result" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scroll to top knapp -->
+    <button id="scrollTop" class="scroll-top" aria-label="Scrolla till toppen">
+      <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+    </button>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-inner">
-      <p>Team Exempel &bull; <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></p>
-      <p class="small">Delat via GitHub Pages — lägg upp er sida och dela i LinkedIn med #chasacademy</p>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <i class="fas fa-code"></i>
+            <span>TechTeam Collective</span>
+          </div>
+          <p class="footer-description">
+            Vi bygger framtiden med kod, kreativitet och samarbete.
+          </p>
+          <div class="social-links">
+            <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4 class="footer-title">Snabblänkar</h4>
+          <nav class="footer-nav">
+            <a href="members.html">Våra medlemmar</a>
+            <a href="about.html">Om oss</a>
+            <a href="#contact">Kontakt</a>
+            <a href="#vote">Röstning</a>
+          </nav>
+        </div>
+        
+        <div class="footer-section">
+          <h4 class="footer-title">Kontakt</h4>
+          <div class="footer-contact">
+            <p>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:hello@techteam.se">hello@techteam.se</a>
+            </p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i>
+              Stockholm, Sverige
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Team Linköping. Delat via GitHub Pages med ❤️</p>
+        <p class="chas-tag">
+          <a href="https://chasacademy.se" target="_blank" rel="noopener">#chasacademy</a>
+        </p>
+      </div>
     </div>
   </footer>
 
