@@ -1,162 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Team Exempel — Start</title>
-  <meta name="description" content="Grupp-hemsida med presentation av medlemmar.">
-  <link rel="stylesheet" href="styles.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <!-- Icon library (Font Awesome free CDN) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Favicon (simple svg data url) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Exempel – Medlemmar</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f6f8fb;
+      color: #0f172a;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .member-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .member-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .member-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 16px;
+    }
+
+    .card-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .card-city,
+    .card-role {
+      margin: 4px 0;
+      color: #6b7280;
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="nav-inner">
-      <a class="brand" href="index.html">TeamExempel</a>
+  <h1>Vårt Team</h1>
 
-      <nav id="mainNav" class="nav">
-        <a href="index.html">Home</a>
-        <a href="members.html">Medlemmar</a>
-        <a href="about.html">Om oss</a>
-      </nav>
-
-      <div class="nav-actions">
-        <button id="themeToggle" aria-label="Mörkt/ljus-läge" class="icon-btn"><i class="fa-solid fa-moon"></i></button>
-        <button id="menuToggle" aria-label="Meny" class="icon-btn hamburger"><i class="fa-solid fa-bars"></i></button>
+  <div class="cards-grid">
+    <!-- Medlem 1 -->
+    <div class="member-card">
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800" alt="Anna Andersson">
+      <div class="card-body">
+        <div class="card-name">Gustaf Nilsson</div>
+        <div class="card-city">Linköping</div>
+        <div class="card-role">Systemutvecklare</div>
       </div>
     </div>
 
-    <!-- sticky decoration -->
-    <div class="hero-deco" aria-hidden="true"></div>
-  </header>
-
-  <main>
-    <section class="hero" id="hero">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <h1 class="hero-title">Vi bygger framtiden — tillsammans</h1>
-          <p class="hero-lead">Presentation av vårt team, våra mål och vägen mot tech-karriärerna.</p>
-          <div class="cta-row">
-            <a href="members.html" class="btn cta">Se medlemmar</a>
-            <a href="#vote" class="btn ghost">Rösta på namn</a>
-          </div>
-        </div>
-        <div class="hero-right">
-          <div class="weather-card" id="weatherCard" aria-live="polite">
-            <div class="weather-loading">Hämtar väder…</div>
-          </div>
-        </div>
+    <!-- Medlem 2 -->
+    <div class="member-card">
+      <img src="https://images.unsplash.com/photo-1545996124-6b7b3f0b1a8d?q=80&w=800" alt="Björn Berg">
+      <div class="card-body">
+        <div class="card-name">Kevin Johnson</div>
+        <div class="card-city">Mjölby</div>
+        <div class="card-role">Systemutvecklare</div>
       </div>
-    </section>
-
-    <section class="cards-overview" id="members-preview">
-      <h2 class="section-title">Utvalda medlemmar</h2>
-
-      <div class="cards-grid">
-        <!-- Cards will be static but have :hover/:focus and animations -->
-        <article class="member-card" tabindex="0">
-          <figure class="card-media">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800" alt="Anna Andersson" />
-          </figure>
-          <div class="card-body">
-            <h3 class="card-name">Anna Andersson</h3>
-            <p class="card-city">Stockholm</p>
-            <p class="card-role">Frontend-utvecklare</p>
-            <div class="card-controls">
-              <button class="like-btn" data-id="anna"><i class="fa-regular fa-heart"></i> <span class="counter">0</span></button>
-              <button class="open-profile" onclick="location.href='members.html'">Profil</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="member-card" tabindex="0">
-          <figure class="card-media">
-            <img src="https://images.unsplash.com/photo-1545996124-6b7b3f0b1a8d?q=80&w=800" alt="Björn Berg" />
-          </figure>
-          <div class="card-body">
-            <h3 class="card-name">Björn Berg</h3>
-            <p class="card-city">Göteborg</p>
-            <p class="card-role">Backend-utvecklare</p>
-            <div class="card-controls">
-              <button class="like-btn" data-id="bjorn"><i class="fa-regular fa-heart"></i> <span class="counter">0</span></button>
-              <button class="open-profile" onclick="location.href='members.html'">Profil</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="member-card" tabindex="0">
-          <figure class="card-media">
-            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800" alt="Clara Carlsson" />
-          </figure>
-          <div class="card-body">
-            <h3 class="card-name">Clara Carlsson</h3>
-            <p class="card-city">Malmö</p>
-            <p class="card-role">Data Scientist</p>
-            <div class="card-controls">
-              <button class="like-btn" data-id="clara"><i class="fa-regular fa-heart"></i> <span class="counter">0</span></button>
-              <button class="open-profile" onclick="location.href='members.html'">Profil</button>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="vote" class="vote-section">
-      <h2 class="section-title">Rösta på teamnamn</h2>
-      <form id="voteForm" class="vote-form" novalidate>
-        <label for="teamOption">Välj namn:</label>
-        <select id="teamOption" required>
-          <option value="">— Välj —</option>
-          <option value="TeamA">Team A</option>
-          <option value="TeamB">Team B</option>
-          <option value="TeamC">Team C</option>
-        </select>
-        <button type="submit" class="btn">Rösta</button>
-        <div id="voteResult" class="vote-result" aria-live="polite"></div>
-      </form>
-    </section>
-
-    <section class="slider-section">
-      <h2 class="section-title">Bildslider</h2>
-      <div class="carousel" id="carousel">
-        <div class="slides">
-          <div class="slide"><img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?q=80&w=1600" alt=""></div>
-          <div class="slide"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600" alt=""></div>
-          <div class="slide"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600" alt=""></div>
-        </div>
-        <button class="carousel-prev" aria-label="Föregående">&lt;</button>
-        <button class="carousel-next" aria-label="Nästa">&gt;</button>
-      </div>
-    </section>
-
-    <section class="contact-section">
-      <h2 class="section-title">Kontakta oss</h2>
-      <form id="contactForm" class="contact-form" novalidate>
-        <label for="nameInput">Namn</label>
-        <input id="nameInput" type="text" required minlength="2" placeholder="Ditt namn">
-        <label for="roleInput">Framtida yrkesroll</label>
-        <input id="roleInput" type="text" placeholder="Frontend-utvecklare">
-        <label for="messageInput">Kort info (visas på sidan efter klick)</label>
-        <input id="messageInput" type="text" placeholder="Skriv något...">
-        <button type="submit" class="btn">Skicka</button>
-        <div id="contactResult" class="contact-result" aria-live="polite"></div>
-      </form>
-    </section>
-
-    <button id="scrollTop" class="scroll-top" title="Scrolla upp"><i class="fa-solid fa-chevron-up"></i></button>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p>Team Exempel &bull; <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></p>
-      <p class="small">Delat via GitHub Pages — lägg upp er sida och dela i LinkedIn med #chasacademy</p>
     </div>
-  </footer>
 
-  <script src="app.js" defer></script>
+    <!-- Medlem 3 -->
+    <div class="member-card">
+      <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800" alt="Clara Carlsson">
+      <div class="card-body">
+        <div class="card-name">Jonathan Käcker</div>
+        <div class="card-city">Norrköping</div>
+        <div class="card-role">Systemutvecklare</div>
+      </div>
+    </div>
+
+    <!-- Medlem 4 -->
+    <div class="member-card">
+      <img src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?q=80&w=800" alt="David Dahl">
+      <div class="card-body">
+        <div class="card-name">David Dahl</div>
+        <div class="card-city">Motala</div>
+        <div class="card-role">Systemutvecklare</div>
+      </div>
+    </div>
+
+    <!-- Medlem 5 -->
+    <div class="member-card">
+      <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?q=80&w=800" alt="Ella Ek">
+      <div class="card-body">
+        <div class="card-name">Ella Ek</div>
+        <div class="card-city">Lund</div>
+        <div class="card-role">Systemutvecklare</div>
+      </div>
+    </div>
+
+    <!-- Medlem 6 -->
+    <div class="member-card">
+      <img src="https://images.unsplash.com/photo-1544005313-3bfa4c9b4f44?q=80&w=800" alt="Felix Fredriksson">
+      <div class="card-body">
+        <div class="card-name">Felix Fredriksson</div>
+        <div class="card-city">Örebro</div>
+        <div class="card-role">Systemutvecklare</div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
