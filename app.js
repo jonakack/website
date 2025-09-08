@@ -61,3 +61,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Simple carousel logic
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.getElementById('carousel');
+  if (!carousel) return;
+
+  const slides = carousel.querySelectorAll('.slide');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? 'block' : 'none';
+    });
+  }
+
+  showSlide(current);
+
+  carousel.querySelector('.carousel-prev').addEventListener('click', () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+
+  carousel.querySelector('.carousel-next').addEventListener('click', () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+});
