@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const weatherCard = document.getElementById('weatherCard');
   const fetchWeather = async (city='Stockholm') => {
     if (!weatherCard) return;
-    const API_KEY = 'PASTA_IN_DIN_OPENWEATHERMAP_KEY_HÄR';
+    const API_KEY ="6848936a35513e67eb8755b32782fd10";
     if (!API_KEY || API_KEY.includes('PASTA_IN')) {
       weatherCard.innerHTML = '<div class="weather-loading">Sätt in din OpenWeatherMap API-nyckel i app.js för att visa aktuellt väder.</div>';
       return;
